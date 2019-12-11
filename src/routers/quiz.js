@@ -1,5 +1,6 @@
 const express = require('express')
 const Question = require('../models/question')
+const getResult = require('../utils/demoanswers')
 const router = new express.Router()
 
 router.post('/iap/demo', async (req, res) => {
@@ -13,20 +14,6 @@ router.post('/iap/demo', async (req, res) => {
     }
 })
 
-router.post('/iap/demo/initpopulate', async (req, res) => {
-    try {
-        const questions = req.body
-        questions.forEach(async (question) => {
-            let newQuestion = new Question(question)
-            await newQuestion.save()
-        })
-        res.status(201).send(questions)
-    } catch (e) {
-        res.status(400).send(e)
-    }
-    
-})
-
 router.get('/iap/demo', async (req, res) => {
     try {
         const questions = await Question.find({})
@@ -36,26 +23,10 @@ router.get('/iap/demo', async (req, res) => {
     }
 })
 
-router.patch('/iap/demo/:id', async (req, res) => {
-    const updates = Object.keys(req.body)
-    const allowedUpdates = ['answer']
-    const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
-
-    if (!isValidOperation) {
-        return res.status(400).send({ error: 'Invalid Updates!' })
-    }
-
+router.post('/iap/demo/result', async (req, res) => {
     try {
-        const question = await Question.findById(req.params.id)
-
-        updates.forEach((update) => question[update] = req.body[update])
-        await question.save()
-
-        if (!question) {
-            return res.status(404).send()
-        }
-
-        res.send(question)
+        const result = getResult(req.body)
+        res.send(result)
     } catch (e) {
         res.status(400).send(e)
     }
