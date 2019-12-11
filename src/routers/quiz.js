@@ -14,11 +14,17 @@ router.post('/iap/demo', async (req, res) => {
 })
 
 router.post('/iap/demo/initpopulate', async (req, res) => {
-    const questions = req.body
-    questions.forEach(async (question) => {
-        let newQuestion = new Question(question)
-        await question.save()
-    })
+    try {
+        const questions = req.body
+        questions.forEach(async (question) => {
+            let newQuestion = new Question(question)
+            await newQuestion.save()
+        })
+        res.status(201).send(questions)
+    } catch (e) {
+        res.status(400).send(e)
+    }
+    
 })
 
 router.get('/iap/demo', async (req, res) => {
