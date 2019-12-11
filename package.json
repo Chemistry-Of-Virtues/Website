@@ -7,12 +7,14 @@
     "express": "^4.17.1",
     "mongoose": "^5.7.13"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "env-cmd": "^8.0.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev" : "nodemon src/index.js",
-    "db" : "/home/weylin/mongodb/bin/mongod --dbpath=/home/weylin/mongodb-data",
-    "start" : "node quiz/src/index.js"
+    "dev": "env-cmd ./config/dev.env nodemon src/index.js",
+    "db": "/home/weylin/mongodb/bin/mongod --dbpath=/home/weylin/mongodb-data",
+    "start": "node quiz/src/index.js"
   },
   "author": "",
   "license": "ISC"

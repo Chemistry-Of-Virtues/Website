@@ -2,7 +2,7 @@ const express = require('express')
 const Question = require('../models/question')
 const router = new express.Router()
 
-router.post('/iap/questions', async (req, res) => {
+router.post('/iap/demo', async (req, res) => {
     const question = new Question(req.body)
 
     try {
@@ -13,7 +13,15 @@ router.post('/iap/questions', async (req, res) => {
     }
 })
 
-router.get('/iap/questions', async (req, res) => {
+router.post('/iap/demo/initpopulate', async (req, res) => {
+    const questions = req.body
+    questions.forEach(async (question) => {
+        let newQuestion = new Question(question)
+        await question.save()
+    })
+})
+
+router.get('/iap/demo', async (req, res) => {
     try {
         const questions = await Question.find({})
         res.send(questions)
@@ -22,7 +30,7 @@ router.get('/iap/questions', async (req, res) => {
     }
 })
 
-router.patch('/iap/questions/:id', async (req, res) => {
+router.patch('/iap/demo/:id', async (req, res) => {
     const updates = Object.keys(req.body)
     const allowedUpdates = ['answer']
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
