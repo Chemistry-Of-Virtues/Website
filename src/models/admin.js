@@ -40,7 +40,7 @@ const adminSchema = new mongoose.Schema({
         type: String,
         trim: true,
         validate(value) {
-            if(!isMobilePhone(value)) {
+            if (!isMobilePhone(value)) {
                 throw new error('Phone number is invalid!')
             }
         }
@@ -51,14 +51,30 @@ const adminSchema = new mongoose.Schema({
 })
 
 adminSchema.pre('save', async function (next) {
-    const user = this
+    const admin = this
 
-    if(user.isModified('password')) {
-        user.password = await bcrypt.hash(user.password, 8)
+    if (admin.isModified('password')) {
+        admin.password = await bcrypt.hash(admin.password, 8)
     }
 
     next()
 })
+
+adminSchema.statics.findByCredentials = async (userName, password) => {
+    const admin = await Admin.findOne({ userName })
+
+    if (!admin) {
+        throw new Error('Unable to Login')
+    }
+
+    const isMatch = await bcrypt.compare(password, admin.password)
+
+    if (!isMatch) {
+        throw new Error('Unable to Login')
+    }
+
+    return admin
+}
 
 const Admin = mongoose.model('Admin', adminSchema)
 
