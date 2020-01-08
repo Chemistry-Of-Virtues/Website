@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const validator = require('validator')
 const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
 
 const clientSchema = new mongoose.Schema({
     firstName: {
@@ -40,6 +41,12 @@ const clientSchema = new mongoose.Schema({
         iapResult: {
             type: String,
         }
+    }],
+    tokens: [{
+        token: {
+            type: String,
+            required: true
+        }
     }]
 })
 
@@ -50,9 +57,18 @@ clientSchema.pre('save', async function (next) {
         client.password = await bcrypt.hash(client.password, 8)
     }
 
-
     next()
 })
+
+clientSchema.methods.generateAuthToken = async function () {
+    const client = this
+    const token = jwt.sign({ _id: client._id.toString() }, process.env.JWT_SECRET)
+
+    client.tokens = client.tokens.concat({ token })
+    await client.save()
+
+    return token
+}
 
 clientSchema.statics.findByCredentials = async (userName, password) => {
     const client = await Client.findOne({ userName })

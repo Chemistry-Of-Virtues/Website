@@ -7,7 +7,8 @@ router.post('/client', async (req, res) => {
 
     try {   
         await client.save()
-        res.status(201).send(client)
+        const token = await client.generateAuthToken()
+        res.status(201).send({ client, token })
     } catch (e) {
         res.status(400).send(e)
     }
