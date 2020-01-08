@@ -6,6 +6,8 @@ Install mongodb and create /mongodb-data/ in your home directory (other director
 
 Run "npm install"
 
+Run "npm install -g nodemon"
+
 Configure /config/dev.env with the following variables:
   <br>PORT // The port used by the express app
   <br>MONGODB_URL // The url of your mongodb database (should be mongodb://127.0.0.1:27017/chemistry-of-virtues)
