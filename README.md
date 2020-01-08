@@ -4,13 +4,13 @@ Install node.js
 
 Install mongodb and create mongodb-data in your home directory (other directories may be used but should be configured in package.json)
 
-Run npm install
+Run "npm install"
 
-Configure the /config/dev.env with the following variables
-  PORT // The port used by the express app
-  MONGODB_URL // The url of your mongodb database (should be mongodb://127.0.0.1:27017/chemistry-of-virtues)
-  JWT_SECRET // The secret for the JSON web tokens
+Configure /config/dev.env with the following variables:
+  <br>PORT // The port used by the express app
+  <br>MONGODB_URL // The url of your mongodb database (should be mongodb://127.0.0.1:27017/chemistry-of-virtues)
+  <br>JWT_SECRET // The secret for the JSON web tokens
   
-Run npm run db
+Run "npm run db"
 
-Run npm run dev
+Run "npm run dev"
