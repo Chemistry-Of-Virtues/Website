@@ -1,8 +1,8 @@
 To run locally:
 
-Install node.js
+Install node.js https://nodejs.org/en/download/
 
-Install mongodb and create mongodb-data in your home directory (other directories may be used but should be configured in package.json)
+Install mongodb and create /mongodb-data/ in your home directory (other directories may be used but should be configured in package.json) https://www.mongodb.com/download-center/community
 
 Run "npm install"
 
@@ -14,3 +14,5 @@ Configure /config/dev.env with the following variables:
 Run "npm run db"
 
 Run "npm run dev"
+
+The project will then be available locally on the specified port.
