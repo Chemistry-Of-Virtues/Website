@@ -1,4 +1,4 @@
-To run locally:
+To Setup:
 
 Install node.js https://nodejs.org/en/download/
 
@@ -12,9 +12,15 @@ Configure /config/dev.env with the following variables:
   <br>PORT // The port used by the express app
   <br>MONGODB_URL // The url of your mongodb database (should be mongodb://127.0.0.1:27017/chemistry-of-virtues)
   <br>JWT_SECRET // The secret for the JSON web tokens
+
+To run: 
   
 Run "npm run db"
 
 Run "npm run dev"
 
 The project will then be available locally on the specified port.
+
+Note on file structure:
+
+Place all .html files in the root public folder. Place script files in the public/scripts folder and stylesheets in the public/stylesheets folder.
