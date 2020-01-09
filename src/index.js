@@ -15,10 +15,6 @@ app.use(questionsRouter)
 app.use(adminRouter)
 app.use(clientRouter)
 
-// app.get('', (req, res) => {
-//     res.send()
-// })
-
 app.listen(port, () => {
     console.log(`Server is up on port ${port}`)
 })

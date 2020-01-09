@@ -1,15 +1,17 @@
 const express = require('express')
 const Client = require('../models/client')
-const { authClient } = require('../middleware/auth')
+const { authClient, authAdmin } = require('../middleware/auth')
 const router = new express.Router()
 
-router.post('/client', async (req, res) => {
-    const client = new Client(req.body)
+router.post('/client', authAdmin, async (req, res) => {
+    const client = new Client({
+        ...req.body,
+        adminId: req.admin._id
+    })
 
     try {   
         await client.save()
-        const token = await client.generateAuthToken()
-        res.status(201).send({ client, token })
+        res.status(201).send({ client })
     } catch (e) {
         res.status(400).send(e)
     }

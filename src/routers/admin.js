@@ -1,5 +1,6 @@
 const express = require('express');
 const Admin = require('../models/admin')
+const Client = require('../models/client')
 const { authAdmin } = require('../middleware/auth')
 const router = new express.Router();
 
@@ -32,6 +33,15 @@ router.post('/admin/logout', authAdmin, async (req, res) => {
         res.send()
     } catch (e) {
         res.status(500).send()
+    }
+})
+
+router.get('/admin/clients', authAdmin, async (req, res) => {
+    try {
+        await req.admin.populate('clients').execPopulate()
+        res.send(req.admin.clients)
+    } catch (e) {
+        res.status(500).send(e)
     }
 })
 

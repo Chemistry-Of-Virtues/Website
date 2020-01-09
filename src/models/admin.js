@@ -57,6 +57,12 @@ const adminSchema = new mongoose.Schema({
     }]
 })
 
+adminSchema.virtual('clients', {
+    ref: 'Client',
+    localField: '_id',
+    foreignField: 'adminId'
+})
+
 adminSchema.pre('save', async function (next) {
     const admin = this
 

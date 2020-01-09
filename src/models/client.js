@@ -37,6 +37,11 @@ const clientSchema = new mongoose.Schema({
             }
         }
     },
+    adminId: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'Admin'
+    },
     iapResults: [{
         iapResult: {
             type: String,
