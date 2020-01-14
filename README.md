@@ -15,7 +15,7 @@ Configure /config/dev.env with the following variables:
 
 To Run: 
   
-Run "npm run db"
+Run "npm run dev"
 
 Start database. (mongoDB file path + /bin/mongod)
 
