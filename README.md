@@ -17,7 +17,7 @@ To Run:
   
 Run "npm run db"
 
-Run "npm run dev"
+Start database.
 
 The project will then be available locally on the specified port.
 
