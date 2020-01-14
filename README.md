@@ -1,4 +1,4 @@
-To Setup:
+To Setup (Windows):
 
 Install node.js https://nodejs.org/en/download/
 
@@ -32,3 +32,10 @@ https://www.getpostman.com/downloads/
 
 Robo 3T: GUI for mongoDB databases
 https://robomongo.org/download
+
+To Run(Windows):
+Run "& 'C:\Program Files\MongoDB\Server\4.2\bin\mongod'"
+
+Run "npm run dev"
+
+It will be available on the port specified in the dev.env file
