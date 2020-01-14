@@ -2,7 +2,7 @@ To Setup:
 
 Install node.js https://nodejs.org/en/download/
 
-Install mongodb and create /mongodb-data/ in your home directory (other directories may be used but should be configured in package.json) https://www.mongodb.com/download-center/community
+Install mongodb from https://www.mongodb.com/download-center/community and create /data/db in your home directory. 
 
 Run "npm install"
 
@@ -17,10 +17,18 @@ To Run:
   
 Run "npm run db"
 
-Start database.
+Start database. (mongoDB file path + /bin/mongod)
 
 The project will then be available locally on the specified port.
 
 Note on File Structure:
 
 Place all .html files in the root public folder. Place script files in the public/scripts folder and stylesheets in the public/stylesheets folder.
+
+Useful utilities:
+
+Postman: HTTP requests interface
+https://www.getpostman.com/downloads/
+
+Robo 3T: GUI for mongoDB databases
+https://robomongo.org/download
