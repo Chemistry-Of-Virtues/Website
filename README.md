@@ -33,7 +33,8 @@ https://www.getpostman.com/downloads/
 Robo 3T: GUI for mongoDB databases
 https://robomongo.org/download
 
-To Run(Windows):
+To Run the Project(Windows):
+
 Run "& 'C:\Program Files\MongoDB\Server\4.2\bin\mongod'"
 
 Run "npm run dev"
