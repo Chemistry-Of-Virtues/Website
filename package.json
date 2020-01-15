@@ -9,8 +9,8 @@
     "bcryptjs": "^2.4.3",
     "env-cmd": "^8.0.2" , 
     "jsonwebtoken": "^8.5.1",
-    "validator": "^12.1.0"
-
+    "validator": "^12.1.0",
+    "socket.io": "^2.3.0"
   },
   "devDependencies": {
     "env-cmd": "^8.0.2"
@@ -19,6 +19,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "env-cmd ./config/dev.env nodemon src/index.js",
     "db": "/home/weylin/mongodb/bin/mongod --dbpath=/home/weylin/mongodb-data",
+    "windows-db": "",
     "start": "node src/index.js"
   },
   "author": "",
