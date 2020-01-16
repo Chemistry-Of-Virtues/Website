@@ -5,6 +5,7 @@ const questions = []
 const postQuestions = async (data) => {
     fetch(getResultsURL, {
         method: 'POST',
+        mode: 'no-cors',
         headers: {
             'Content-Type': 'application/json'
         },
