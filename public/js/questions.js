@@ -27,6 +27,7 @@ const getQuestions = async () => {
         return
     })
     // Code to use questions here
+    // Test comment
 
     // Call to post questions when answers are retreived from the user
     postQuestions(questions)
