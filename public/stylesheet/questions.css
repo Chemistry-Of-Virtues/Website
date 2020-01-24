@@ -73,17 +73,18 @@
     h1 {
         background-color: var(--background-color);
         border-radius: 25px;
-        box-shadow: 2px 1px 8px var(--box-shadow-dark), -3px -2px 8px var(--box-shadow-light);
+        box-shadow: 6px 3px 12px var(--box-shadow-dark), -6px -3px 12px var(--box-shadow-light);
         color: var(--header-color);
         font-size: 72px;
         padding: 8px 20px;
+        margin: 20px;
         text-align: center;
     }
     
     h3 {
         background-color: var(--background-color);
         border-radius: 25px;
-        box-shadow: 2px 1px 8px var(--box-shadow-dark), -3px -2px 8px var(--box-shadow-light);
+        box-shadow: 6px 3px 12px var(--box-shadow-dark), -6px -3px 12px var(--box-shadow-light);
         color: var(--header-color);
         font-size: 64px;
         padding: 20px;
