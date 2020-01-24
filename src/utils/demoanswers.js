@@ -3,38 +3,38 @@ const getResults = (questions) => {
     const traits = {
         'Openness To Experience': {
             'category': 'Big Five Personality Traits',
-            'positive': 'Inventive/Curious',
-            'negative': 'Consistent/Cautious',
+            'positive': 'Curious',
+            'negative': 'Cautious',
             'value': 0
         },
         'Conscientiousness': {
             'category': 'Big Five Personality Traits',
-            'positive': 'Easy-going/Careless',
-            'negative': 'Efficient/Organized',
+            'positive': 'Careless',
+            'negative': 'Organized',
             'value': 0
         },
         'Extraversion': {
             'category': 'Big Five Personality Traits',
-            'positive': 'Outgoing/Energetic',
-            'negative': 'Solitary/Reserved',
+            'positive': 'Outgoing',
+            'negative': 'Reserved',
             'value': 0
         },
         'Agreeableness': {
             'category': 'Big Five Personality Traits',
-            'positive': 'Friendly/Compassionate',
-            'negative': 'Challenging/Detached',
+            'positive': 'Friendly',
+            'negative': 'Detached',
             'value': 0
         },
         'Neuroticism': {
             'category': 'Big Five Personality Traits',
-            'positive': 'Secure/Confident',
-            'negative': 'Sensitive/Nervous',
+            'positive': 'Secure',
+            'negative': 'Sensitive',
             'value': 0
         },
         'Mind': {
             'category': 'Personality Aspects',
-            'positive': 'Internal Focused',
-            'negative': 'External Focused',
+            'positive': 'Internal',
+            'negative': 'External',
             'value': 0
         },
         'Energy': {
@@ -45,8 +45,8 @@ const getResults = (questions) => {
         },
         'Nature': {
             'category': 'Personality Aspects',
-            'positive': 'Intellectual Virtue',
-            'negative': 'Moral Virtue',
+            'positive': 'Intellectual',
+            'negative': 'Moral',
             'value': 0
         },
         'Tactics': {
