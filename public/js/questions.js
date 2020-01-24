@@ -1,6 +1,7 @@
 const getQuestionsURL = '/iap/demo'
 const getResultsURL = '/iap/demo/result'
 let questions = []
+let results = ''
 
 const $submitQuestions = document.getElementById('submit-questions')
 
@@ -15,7 +16,7 @@ const postQuestions = async (data) => {
     }).then((res) => {
         return res.json()
     }).then((json) => {
-        console.log(json)
+        results = json
     }).catch((e) => {
         console.log(e)
     })
@@ -70,13 +71,22 @@ const displayQuestion = (question) => {
 
 }
 
+const displayResults = (results) => {
+    const resultText = document.createElement('p')
+    resultText.innerHTML = results
+    document.getElementById('results').appendChild(resultText)
+}
+
 const submitQuestions = (questions) => {
+    let allQuestionsCompleted = true;
     questions.forEach((question) => {
         if (document.querySelector(`input[name="${question.number}"]:checked`)) {
             question.answer = document.querySelector(`input[name="${question.number}"]:checked`).value
+        } else {
+            allQuestionsCompleted = false
         }
     })
-    return questions
+    return allQuestionsCompleted ? questions : false
 }
 
 const getQuestions = async () => {
@@ -93,8 +103,15 @@ const getQuestions = async () => {
         displayQuestion(question)
     })
 
-    $submitQuestions.addEventListener('click', () => {
-        postQuestions(submitQuestions(questions))
+    $submitQuestions.addEventListener('click', async () => {
+        if (submitQuestions(questions)) {  
+            await postQuestions(submitQuestions(questions))
+            document.getElementById('questions').parentNode.removeChild(document.getElementById('questions'))
+            document.getElementById('submit-questions').parentNode.removeChild(document.getElementById('submit-questions')) 
+            displayResults(results) 
+        } else {
+            alert('Please answer all of the questions before submitting!')
+        }
     })
 }
 
