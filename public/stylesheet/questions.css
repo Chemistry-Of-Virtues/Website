@@ -11,7 +11,7 @@
     --secondary-text-color: white;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1080px) {
     body {
         align-items: center;
         background-color: var(--background-color);
@@ -115,7 +115,7 @@
     }
 }
 
-@media only screen and (min-width: 901px) {
+@media only screen and (min-width: 1081px) {
     body {
         align-items: center;
         background-color: var(--background-color);
