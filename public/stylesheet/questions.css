@@ -52,7 +52,7 @@
         border-radius: 10px;
         box-shadow: 4px 2px 8px var(--box-shadow-dark), -4px -2px 8px var(--box-shadow-light);
         color: var(--button-color);
-        font-size: 20px;
+        font-size: 45px;
         margin: 8px;
         padding: 18px;
         text-align: center;
@@ -85,8 +85,8 @@
         border-radius: 10px;
         box-shadow: 2px 1px 8px var(--box-shadow-dark), -3px -2px 8px var(--box-shadow-light);
         color: var(--header-color);
-        font-size: 28px;
-        padding: 8px 20px;
+        font-size: 64px;
+        padding: 8px;
         text-align: center;
     }
     
