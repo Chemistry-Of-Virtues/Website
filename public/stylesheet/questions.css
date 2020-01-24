@@ -11,7 +11,7 @@
     --secondary-text-color: white;
 }
 
-@media only screen and (max-width: 1080px) {
+@media only screen and (max-width: 768px) {
     body {
         align-items: center;
         background-color: var(--background-color);
@@ -115,7 +115,7 @@
     }
 }
 
-@media only screen and (min-width: 1081px) {
+@media only screen and (min-width: 769px) {
     body {
         align-items: center;
         background-color: var(--background-color);
@@ -131,6 +131,10 @@
         margin: 0 10vw 0 10vw;
         width: 80vw;
     }
+
+    #questions form {
+        width: 100%;
+    }
     
     .answers {
         display: flex;
@@ -140,8 +144,8 @@
     
     .answer {
         display: flex;
+        flex: 1;
         justify-content: center;
-        width: 200px;
     }
     
     .answer input {
@@ -153,6 +157,7 @@
         border-radius: 10px;
         box-shadow: 4px 2px 8px var(--box-shadow-dark), -4px -2px 8px var(--box-shadow-light);
         color: var(--button-color);
+        font-size: 20px;
         margin: 8px;
         padding: 12px;
         text-align: center;
@@ -188,7 +193,6 @@
         font-size: 28px;
         padding: 8px 20px;
         text-align: center;
-        width: 1000px;
     }
     
     input[type="submit"] {
@@ -214,4 +218,3 @@
         outline: none;
     }
 }
-
