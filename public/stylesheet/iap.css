@@ -176,7 +176,8 @@ p {
         font-size: 28px;
         margin: 48px;
         padding: 30px;
-        width: 60%
+        -webkit-appearance: none;
+        width: 60%;
     }
 }
 
