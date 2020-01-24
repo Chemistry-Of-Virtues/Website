@@ -1,0 +1,191 @@
+:root {
+    --background-color: #eee;
+    --box-shadow-light: #fff;
+    --box-shadow-dark: #dbdbdb;
+    --primary-color: #133840;
+    --accent-color: rgb(10, 124, 20);
+    --header-color: black;
+    --button-color: white;
+    --secondary-text-color: white;
+}
+
+#questions {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 10vw 0 10vw;
+}
+
+#questions form {
+    width: 100%;
+}
+
+.answers {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 48px;
+}
+
+.answer {
+    display: flex;
+    justify-content: center;
+}
+
+.answer input {
+    display: none;
+}
+
+.answer label {
+    background-color: var(--primary-color);
+    box-shadow: 4px 2px 8px var(--box-shadow-dark), -4px -2px 8px var(--box-shadow-light);
+    color: var(--button-color);
+    text-align: center;
+    transition: 250ms;
+}
+
+.answer label:hover {
+    box-shadow: 8px 4px 8px var(--box-shadow-dark), -4px -2px 8px var(--box-shadow-light);
+    transition: 250ms;
+}
+
+.result {
+    
+}
+
+.result-scale {
+    display: flex;
+    justify-content: space-between;
+}
+
+body {
+    align-items: center;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    background-color: var(--background-color);
+    color: var(--header-color);
+    text-align: center;
+}
+
+h3 {
+    background-color: var(--background-color);
+    color: var(--header-color);
+    text-align: center;
+}
+
+input[type="radio"]:checked+label {
+    background-color: var(--accent-color);
+    color: var(--secondary-text-color);
+}
+
+input[type="submit"] {
+    background-color: var(--accent-color);
+    border: none;
+    box-shadow: 4px 2px 8px var(--box-shadow-dark), -4px -2px 8px var(--box-shadow-light);
+    color: var(--secondary-text-color);
+    text-align: center;
+    transition: 250ms;
+}
+    
+input[type="submit"]:hover {
+    box-shadow: 8px 4px 8px var(--box-shadow-dark), -4px -2px 8px var(--box-shadow-light);
+    transition: 250ms;
+}
+    
+input[type="submit"]:focus {
+    outline: none;
+}
+
+@media only screen and (max-width: 1080px) {
+    
+    .answers {
+        flex-direction: column;
+    }
+    
+    .answer label {
+        border-radius: 25px;
+        font-size: 45px;
+        margin: 20px;
+        padding: 30px;
+        width: 90%;
+    }
+
+    .result {
+        border-radius: 25px;
+        box-shadow: 6px 3px 12px var(--box-shadow-dark), -6px -3px 12px var(--box-shadow-light);
+    }
+    
+    h1 {
+        border-radius: 25px;
+        box-shadow: 6px 3px 12px var(--box-shadow-dark), -6px -3px 12px var(--box-shadow-light);
+        font-size: 72px;
+        padding: 8px 20px;
+        margin: 20px;
+    }
+    
+    h3 {
+        border-radius: 25px;
+        box-shadow: 6px 3px 12px var(--box-shadow-dark), -6px -3px 12px var(--box-shadow-light);
+        font-size: 64px;
+        padding: 20px;
+    }
+    
+    input[type="submit"] {
+        border-radius: 25px;
+        font-size: 28px;
+        margin: 48px;
+        padding: 30px;
+        width: 60%
+    }
+}
+
+@media only screen and (min-width: 1081px) {
+    #questions {
+        width: 60vw;
+    }
+    
+    .answer {
+        flex: 1;
+    }
+    
+    .answer label {
+        border-radius: 10px;
+        font-size: 20px;
+        margin: 8px;
+        padding: 12px;
+        width: 100%
+    }
+
+    .result {
+        border-radius: 10px;
+        box-shadow: 2px 1px 8px var(--box-shadow-dark), -3px -2px 8px var(--box-shadow-light);
+        padding: 15px;
+        margin: 48px 0;
+    }
+    
+    h1 {
+        border-radius: 10px;
+        box-shadow: 2px 1px 8px var(--box-shadow-dark), -3px -2px 8px var(--box-shadow-light);
+        font-size: 48px;
+        padding: 8px 20px;
+    }
+    
+    h3 {
+        border-radius: 10px;
+        box-shadow: 2px 1px 8px var(--box-shadow-dark), -3px -2px 8px var(--box-shadow-light);
+        font-size: 28px;
+        padding: 8px 20px;
+    }
+    
+    input[type="submit"] {
+        border-radius: 10px;
+        font-size: 28px;
+        margin: 48px;
+        padding: 12px;
+        width: 750px;
+    }
+}

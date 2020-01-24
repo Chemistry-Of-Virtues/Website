@@ -72,12 +72,30 @@ const displayQuestion = (question) => {
 
 const displayResults = (results) => {
     for (const category in results) {
-        const resultTitle = document.createElement('h3')
-        const resultText = document.createElement('p')
-        resultTitle.innerHTML = category
-        resultText.innerHTML = (`${results[category].positive} : ${results[category].value} : ${results[category].negative}`)
-        document.getElementById('results').appendChild(resultTitle)
-        document.getElementById('results').appendChild(resultText)
+        const $result = document.createElement('div')
+        const $resultTitle = document.createElement('h3')
+        const $resultScale = document.createElement('div')
+        const $resultPositive = document.createElement('p')
+        const $resultNegative = document.createElement('p')
+        const $resultText = document.createElement('p')
+        const $results = document.getElementById('results')
+
+        $resultTitle.innerHTML = category
+        $resultPositive.innerHTML = results[category].positive
+        $resultNegative.innerHTML = results[category].negative
+        $resultText.innerHTML = results[category].value
+
+        $resultScale.className = 'result-scale'
+        $result.className = 'result'
+
+        $resultScale.appendChild($resultPositive)
+        $resultScale.appendChild($resultNegative)
+
+        $result.appendChild($resultTitle)
+        $result.appendChild($resultText)
+        $result.appendChild($resultScale)
+
+        $results.appendChild($result)
     }
 }
 
@@ -113,6 +131,10 @@ const getQuestions = async () => {
             document.getElementById('questions').parentNode.removeChild(document.getElementById('questions'))
             document.getElementById('submit-questions').parentNode.removeChild(document.getElementById('submit-questions')) 
             displayResults(results) 
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            })
         } else {
             alert('Please answer all of the questions before submitting!')
         }
