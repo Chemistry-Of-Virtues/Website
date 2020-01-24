@@ -69,7 +69,7 @@ const getResults = (questions) => {
     }
     questions.forEach((question) => {
         question.attributes.forEach((attribute) => {
-            traits[attribute].value += question.answer
+            traits[attribute].value += parseInt(question.answer)
         })
     })
     return JSON.stringify(traits)

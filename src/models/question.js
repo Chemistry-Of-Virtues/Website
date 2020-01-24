@@ -22,12 +22,9 @@ const questionSchema = new mongoose.Schema({
         default: '',
         trim: true,
     },
-    attributes : [{
-        attribute: {
-            type: String,
-            required: true
-        }
-    }]
+    attributes : [
+        
+    ]
 })
 
 const Question = mongoose.model('Question', questionSchema)

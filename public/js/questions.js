@@ -97,6 +97,7 @@ const getQuestions = async () => {
         json.forEach((question) => {
             questions.push(question)
         })
+        console.log(questions)
         return
     })
     // Code to use questions here
@@ -107,8 +108,8 @@ const getQuestions = async () => {
     $submitQuestions.addEventListener('click', async () => {
         if (submitQuestions(questions)) {  
             await postQuestions(submitQuestions(questions))
-            document.getElementById('questions').parentNode.removeChild(document.getElementById('questions'))
-            document.getElementById('submit-questions').parentNode.removeChild(document.getElementById('submit-questions')) 
+            // document.getElementById('questions').parentNode.removeChild(document.getElementById('questions'))
+            // document.getElementById('submit-questions').parentNode.removeChild(document.getElementById('submit-questions')) 
             displayResults(results) 
         } else {
             alert('Please answer all of the questions before submitting!')
