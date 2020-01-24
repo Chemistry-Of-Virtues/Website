@@ -6,7 +6,6 @@ let results = ''
 const $submitQuestions = document.getElementById('submit-questions')
 
 const postQuestions = async (data) => {
-    console.log(data)
     await fetch(getResultsURL, {
         method: 'POST',
         headers: {
@@ -17,7 +16,6 @@ const postQuestions = async (data) => {
         return res.json()
     }).then((json) => {
         results = json
-        console.log(results)
     }).catch((e) => {
         console.log(e)
     })
@@ -73,9 +71,14 @@ const displayQuestion = (question) => {
 }
 
 const displayResults = (results) => {
-    const resultText = document.createElement('p')
-    resultText.innerHTML = results
-    document.getElementById('results').appendChild(resultText)
+    for (const category in results) {
+        const resultTitle = document.createElement('h3')
+        const resultText = document.createElement('p')
+        resultTitle.innerHTML = category
+        resultText.innerHTML = (`${results[category].positive} : ${results[category].value} : ${results[category].negative}`)
+        document.getElementById('results').appendChild(resultTitle)
+        document.getElementById('results').appendChild(resultText)
+    }
 }
 
 const submitQuestions = (questions) => {
@@ -97,7 +100,6 @@ const getQuestions = async () => {
         json.forEach((question) => {
             questions.push(question)
         })
-        console.log(questions)
         return
     })
     // Code to use questions here
@@ -108,8 +110,8 @@ const getQuestions = async () => {
     $submitQuestions.addEventListener('click', async () => {
         if (submitQuestions(questions)) {  
             await postQuestions(submitQuestions(questions))
-            // document.getElementById('questions').parentNode.removeChild(document.getElementById('questions'))
-            // document.getElementById('submit-questions').parentNode.removeChild(document.getElementById('submit-questions')) 
+            document.getElementById('questions').parentNode.removeChild(document.getElementById('questions'))
+            document.getElementById('submit-questions').parentNode.removeChild(document.getElementById('submit-questions')) 
             displayResults(results) 
         } else {
             alert('Please answer all of the questions before submitting!')
