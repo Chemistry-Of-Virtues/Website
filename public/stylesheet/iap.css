@@ -173,11 +173,11 @@ p {
     
     input[type="submit"] {
         border-radius: 25px;
-        font-size: 28px;
+        font-size: 64px;
         margin: 48px;
         padding: 30px;
         -webkit-appearance: none;
-        width: 60%;
+        width: 90%;
     }
 }
 
