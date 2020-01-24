@@ -1,11 +1,13 @@
 const getQuestionsURL = '/iap/demo'
 const getResultsURL = '/iap/demo/result'
-const questions = []
+let questions = []
+
+const $submitQuestions = document.getElementById('submit-questions')
 
 const postQuestions = async (data) => {
-    fetch(getResultsURL, {
+    console.log(data)
+    await fetch(getResultsURL, {
         method: 'POST',
-        mode: 'no-cors',
         headers: {
             'Content-Type': 'application/json'
         },
@@ -14,7 +16,67 @@ const postQuestions = async (data) => {
         return res.json()
     }).then((json) => {
         console.log(json)
+    }).catch((e) => {
+        console.log(e)
     })
+}
+
+const displayQuestion = (question) => {
+    const $questionsSection = document.getElementById('questions')
+    const $questionForm = document.createElement('form')
+    const $questionText = document.createElement('h3')
+    const $answers = document.createElement('div')
+
+    $questionText.innerHTML = question.question
+    $questionForm.appendChild($questionText)
+    $answers.className = 'answers'
+
+    for (let i = 1; i < 6; i++) {
+        const $answer = document.createElement('div')
+        const $answerField = document.createElement('input')
+        const $answerTitle = document.createElement('label')
+            
+        $answerField.type = 'radio'
+        $answerField.name = question.number
+
+        $answerField.value = i
+        $answerField.id = `${question.number}${i}`
+        $answerTitle.htmlFor = `${question.number}${i}`
+        switch (i) {
+            case 1:
+                $answerTitle.innerHTML = "Strongly Disagree"
+                break;
+            case 2:
+                $answerTitle.innerHTML = "Somewhat Disagree"
+                break;
+            case 3:
+                $answerTitle.innerHTML = "Neutral"
+                break;
+            case 4:
+                $answerTitle.innerHTML = "Somewhat Agree"
+                break;
+            case 5:
+                $answerTitle.innerHTML = "Strongly Agree"
+                break;
+        }
+        $answer.className = 'answer'
+        $answer.appendChild($answerField)
+        $answer.appendChild($answerTitle)
+        $answers.appendChild($answer)
+    }
+    $questionForm.id = `question-form-${question.number}`
+    $questionForm.appendChild($answers)
+    $questionsSection.appendChild($questionForm)
+
+}
+
+const submitQuestions = (questions) => {
+    questions.forEach((question) => {
+        if (document.querySelector(`input[name="${question.number}"]:checked`)) {
+            question.answer = document.querySelector(`input[name="${question.number}"]:checked`).value
+        }
+    })
+    return questions
 }
 
 const getQuestions = async () => {
@@ -27,10 +89,13 @@ const getQuestions = async () => {
         return
     })
     // Code to use questions here
-    // Test comment
+    questions.forEach((question) => {
+        displayQuestion(question)
+    })
 
-    // Call to post questions when answers are retreived from the user
-    postQuestions(questions)
+    $submitQuestions.addEventListener('click', () => {
+        postQuestions(submitQuestions(questions))
+    })
 }
 
 getQuestions()
