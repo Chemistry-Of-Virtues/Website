@@ -21,7 +21,13 @@ const questionSchema = new mongoose.Schema({
         type: String,
         default: '',
         trim: true,
-    }
+    },
+    attributes : [{
+        attribute: {
+            type: String,
+            required: true
+        }
+    }]
 })
 
 const Question = mongoose.model('Question', questionSchema)

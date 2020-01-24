@@ -17,6 +17,7 @@ const postQuestions = async (data) => {
         return res.json()
     }).then((json) => {
         results = json
+        console.log(results)
     }).catch((e) => {
         console.log(e)
     })
@@ -40,7 +41,7 @@ const displayQuestion = (question) => {
         $answerField.type = 'radio'
         $answerField.name = question.number
 
-        $answerField.value = i
+        $answerField.value = (i - 3)
         $answerField.id = `${question.number}${i}`
         $answerTitle.htmlFor = `${question.number}${i}`
         switch (i) {
