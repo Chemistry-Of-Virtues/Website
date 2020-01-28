@@ -1,21 +1,73 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/public/stylesheet/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
+    <title>Chemistry of Virtues</title>
 </head>
 
 <body>
-    <h1>Page Loaded</h1>
-    <a href="questions.html">Go To IAP</a>
 
-    <!-- Testing Fetch API -->
-    <script src="js/questions.js"></script>
+    <nav class="navbar navbar-expand-lg navbar-light text-light">
+        <a class="navbar-brand text-light" href="#">Chemistry of Virtues</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link text-muted" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-muted" href="about.html">About Us</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-muted" href="contact.html">Contact Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-muted" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Me
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item text-muted" href="user.html">User Profile</a>
+                        <a class="dropdown-item text-muted" href="login.html">Login</a>
+                        <a class="dropdown-item text-muted" href="registeration.html">Register</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-    <!-- Testing Socket.io Connections
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/js/socketio.js"></script> -->
+    <div id="lightBackground" class="jumbotron jumbotron-fluid">
+        <div class="container lightBackground">
+            <h1 class="display-4 text-dark lightBackground">Find Your Virtue</h1>
+            <p class="lead text-dark lightBackground">The chemistry of Virtue is a visual tool to help a person understand the different categories and elements in each virtue category as well as helping to create virtue formulas that will help define who we truly are as well as what we want to become.</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="newpage.js"></script>
+
 </body>
 
 </html>
+
+<!--
+<h1>Page Loaded</h1>
+<a href="questions.html">Go To IAP</a>
+
+<!-- Testing Fetch API -->
+<script src="js/questions.js"></script>
+
+<!-- Testing Socket.io Connections
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/socketio.js"></script> -->

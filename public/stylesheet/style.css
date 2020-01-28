@@ -1,0 +1,24 @@
+/* Color pallete
+
+Orange: #FA991C
+Tan: #FBF3F2
+Teal: #1C768F
+Dark Blue: #032539
+
+*/
+
+* {
+
+    background: #032539;
+
+}
+
+#lightBackground  {
+
+    background: #FBF3F2;
+}
+
+.lightBackground {
+
+    background: #FBF3F2;
+}
