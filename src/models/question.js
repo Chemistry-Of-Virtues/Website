@@ -24,7 +24,11 @@ const questionSchema = new mongoose.Schema({
     },
     attributes : [
         
-    ]
+    ],
+    reverse : {
+        type: Boolean,
+        default : false
+    }
 })
 
 const Question = mongoose.model('Question', questionSchema)
