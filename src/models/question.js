@@ -7,11 +7,6 @@ const questionSchema = new mongoose.Schema({
         trim: true,
         unique: true
     }, 
-    quiz : {
-        type: String,
-        required: true,
-        trim: true
-    },
     answer : {
         type: String,
         default: '',
