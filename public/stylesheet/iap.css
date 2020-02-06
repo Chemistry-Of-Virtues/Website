@@ -78,7 +78,9 @@ body {
 h1 {
     background-color: var(--background-color);
     color: var(--header-color);
+    margin: 45px 0 90px 0;
     text-align: center;
+    padding: 15px;
 }
 
 h3 {
