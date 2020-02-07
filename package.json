@@ -4,21 +4,21 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.17.1",
-    "mongoose": "^5.7.13",
     "bcryptjs": "^2.4.3",
     "env-cmd": "^8.0.2",
+    "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
-    "validator": "^12.1.0",
-    "socket.io": "^2.3.0"
+    "mongoose": "^5.7.13",
+    "nodemon": "^2.0.2",
+    "socket.io": "^2.3.0",
+    "validator": "^12.1.0"
   },
-  "devDependencies": {
-    "env-cmd": "^8.0.2"
-  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "env-cmd ./config/dev.env nodemon src/index.js",
     "db": "/home/weylin/mongodb/bin/mongod --dbpath=/home/weylin/mongodb-data",
+    "macdb": "/Users/weylin/mongodb/bin/mongod --dbpath=/Users/weylin/mongodb-data",
     "windows-db": "",
     "start": "node src/index.js"
   },

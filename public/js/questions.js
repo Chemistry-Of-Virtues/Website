@@ -21,7 +21,7 @@ const postQuestions = async (data) => {
     })
 }
 
-const displayQuestion = (question) => {
+const displayQuestion = (question, index) => {
     const $questionsSection = document.getElementById('questions')
     const $questionForm = document.createElement('form')
     const $questionText = document.createElement('h3')
@@ -37,11 +37,11 @@ const displayQuestion = (question) => {
         const $answerTitle = document.createElement('label')
             
         $answerField.type = 'radio'
-        $answerField.name = question.number
+        $answerField.name = question.question
 
         $answerField.value = (i - 3)
-        $answerField.id = `${question.number}${i}`
-        $answerTitle.htmlFor = `${question.number}${i}`
+        $answerField.id = `${index}${i}`
+        $answerTitle.htmlFor = `${index}${i}`
         switch (i) {
             case 1:
                 $answerTitle.innerHTML = "Strongly Disagree"
@@ -64,7 +64,7 @@ const displayQuestion = (question) => {
         $answer.appendChild($answerTitle)
         $answers.appendChild($answer)
     }
-    $questionForm.id = `question-form-${question.number}`
+    $questionForm.id = `question-form-${index}`
     $questionForm.appendChild($answers)
     $questionsSection.appendChild($questionForm)
 
@@ -104,8 +104,8 @@ const displayResults = (results) => {
 const submitQuestions = (questions) => {
     let allQuestionsCompleted = true;
     questions.forEach((question) => {
-        if (document.querySelector(`input[name="${question.number}"]:checked`)) {
-            question.answer = document.querySelector(`input[name="${question.number}"]:checked`).value
+        if (document.querySelector(`input[name="${question.question}"]:checked`)) {
+            question.answer = document.querySelector(`input[name="${question.question}"]:checked`).value
         } else {
             allQuestionsCompleted = false
         }
@@ -123,8 +123,8 @@ const getQuestions = async () => {
         return
     })
     // Code to use questions here
-    questions.forEach((question) => {
-        displayQuestion(question)
+    questions.forEach((question, index) => {
+        displayQuestion(question, index)
     })
 
     $submitQuestions.addEventListener('click', async () => {

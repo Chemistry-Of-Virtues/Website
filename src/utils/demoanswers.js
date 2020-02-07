@@ -55,6 +55,30 @@ const getResults = (questions) => {
             'negative': 'Adaptive',
             'value': 0
         },
+        'Abusive': {
+            'category': 'Issues and Behaviors',
+            'positive': 'Awareness/Professional Help/Finding Purpose',
+            'negative': 'Emotional and/or Physical',
+            'value': 0
+        },
+        'Addiction': {
+            'category': 'Issues and Behaviors',
+            'positive': 'Use Purpose and Virtue to Overcome',
+            'negative': 'Substance or Behavioral',
+            'value': 0
+        },
+        'Depression': {
+            'category': 'Issues and Behaviors',
+            'positive': 'Awareness/Professional Help/Finding Purpose',
+            'negative': 'Chemical Imbalance & Situational',
+            'value': 0
+        },
+        'Anger': {
+            'category': 'Issues and Behaviors',
+            'positive': 'Anger Towards Self & Others',
+            'negative': 'Awareness and Conscious Choice of Action',
+            'value': 0
+        },
     }
 
     questions.forEach((question) => {
@@ -69,7 +93,11 @@ const getResults = (questions) => {
     }
     questions.forEach((question) => {
         question.attributes.forEach((attribute) => {
-            traits[attribute].value += parseInt(question.answer)
+            if (traits[attribute.name]) {
+                traits[attribute.name].value += parseInt(question.answer)
+            } else {
+                console.log(`${attribute.name} does not exist.`)
+            }
         })
     })
     return JSON.stringify(traits)
