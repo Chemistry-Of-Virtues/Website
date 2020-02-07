@@ -107,7 +107,11 @@ const submitQuestions = (questions) => {
         if (document.querySelector(`input[name="${question.question}"]:checked`)) {
             question.answer = document.querySelector(`input[name="${question.question}"]:checked`).value
         } else {
-            allQuestionsCompleted = false
+            // Added for dev
+            question.answer = '-2'
+
+            // Removed for dev
+            // allQuestionsCompleted = false
         }
     })
     return allQuestionsCompleted ? questions : false
