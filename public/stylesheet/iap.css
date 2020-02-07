@@ -70,7 +70,7 @@
 }
 
 .result-title {
-    box-shadow: 4px 2px 8px var(--box-shadow-light), -4px -2px 8px var(--box-shadow-dark);
+    box-shadow: none;
 }
 
 body {
