@@ -56,7 +56,9 @@
 
 .result-scale {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 20px 80px;
+    width: 100%;
 }
 
 .result-text {
@@ -65,6 +67,10 @@
     margin: auto;
     text-align: center;
     transition: 250ms;
+}
+
+.result-title {
+    box-shadow: 4px 2px 8px var(--box-shadow-light), -4px -2px 8px var(--box-shadow-dark);
 }
 
 body {
@@ -157,6 +163,7 @@ p {
         font-size: 45px;
         margin: 20px;
         padding: 30px;
+        width: 80%;
     }
     
     h1 {
