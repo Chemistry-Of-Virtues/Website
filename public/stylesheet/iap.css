@@ -168,7 +168,7 @@ p {
     .result-scale p {
         font-size: 45px;
         margin: 24px 0 48px 0;
-        word-break: break-all;
+        /* word-break: break-all; */
     }
 
     .result-title {

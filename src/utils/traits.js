@@ -56,7 +56,7 @@ const traits = {
     },
     'Abusive': {
         'category': 'Issues and Behaviors',
-        'positive': 'Awareness/Professional Help/Finding Purpose',
+        'positive': 'Awareness, Professional Help, Finding Purpose',
         'negative': 'Emotional and/or Physical',
         'value': 0
     },
@@ -68,7 +68,7 @@ const traits = {
     },
     'Depression': {
         'category': 'Issues and Behaviors',
-        'positive': 'Awareness/Professional Help/Finding Purpose',
+        'positive': 'Awareness, Professional Help, Finding Purpose',
         'negative': 'Chemical Imbalance & Situational',
         'value': 0
     },
@@ -80,14 +80,14 @@ const traits = {
     },
     'Positive Detachment': {
         'category': 'Issues and Behaviors',
-        'positive': 'Mental Block Out/Physical Separation',
+        'positive': 'Mental Block Out, Physical Separation',
         'negative': 'Passive Agressive',
         'value': 0
     },
     'Negative Detachment': {
         'category': 'Issues and Behaviors',
         'positive': 'Engaging in Positive Communication',
-        'negative': 'Mental Withdrawl/Self Medicate/Physical Isolation',
+        'negative': 'Mental Withdrawl, Self Medicate, Physical Isolation',
         'value': 0
     },
     'Communication': {
@@ -105,7 +105,7 @@ const traits = {
     'Abandoned/isolated': {
         'category': 'Wounds',
         'positive': 'Vulnerability & Authenticity',
-        'negative': 'Needy/Clingy/Codependant/Negative Detachment',
+        'negative': 'Needy, Clingy, Codependant, Negative Detachment',
         'value': 0
     },
     'Addictions Of Others': {
@@ -117,7 +117,7 @@ const traits = {
     'Under Authority': {
         'category': 'Wounds',
         'positive': 'Resilience Through Authenticity/Vulnerability',
-        'negative': 'Trust/Boundary & Self Image Issues, Confrontational',
+        'negative': 'Trust, Boundary & Self Image Issues, Confrontational',
         'value': 0
     },
     'Non-controlable Circumstances': {
@@ -152,26 +152,26 @@ const traits = {
     },
     'Intelectual Virtue': {
         'category': 'Virtue',
-        'positive': 'Submissive/Door Mat',
-        'negative': 'Confrontational/Defensive/Blocked Off',
+        'positive': 'Submissive, Door Mat',
+        'negative': 'Confrontational, Defensive, Blocked Off',
         'value': 0
     },
     'Moral Virtue': {
         'category': 'Virtue',
-        'positive': 'Submissive/Door Mat',
-        'negative': 'Confrontational/Defensive/Blocked Off',
+        'positive': 'Submissive, Door Mat',
+        'negative': 'Confrontational, Defensive, Blocked Off',
         'value': 0
     },
     'Emotional Capacity': {
         'category': 'Capacity',
-        'positive': 'Submissive/Door Mat',
-        'negative': 'Confrontational/Defensive/Blocked Off',
+        'positive': 'Submissive, Door Mat',
+        'negative': 'Confrontational, Defensive, Blocked Off',
         'value': 0
     },
     'Mental Capacity': {
         'category': 'Capacity',
-        'positive': 'Submissive/Door Mat',
-        'negative': 'Confrontational/Defensive/Blocked Off',
+        'positive': 'Submissive, Door Mat',
+        'negative': 'Confrontational, Defensive, Blocked Off',
         'value': 0
     },
 }
