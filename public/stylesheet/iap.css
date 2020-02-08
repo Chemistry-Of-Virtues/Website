@@ -22,8 +22,7 @@
 
 .answers {
     display: flex;
-    justify-content: center;
-    margin-bottom: 48px;
+    justify-content: space-around;
 }
 
 .answer {
@@ -36,7 +35,8 @@
 }
 
 .answer label {
-    background-color: var(--primary-color);
+    background-color: var(--background-color);
+    border: 2px solid var(--primary-color);
     box-shadow: 4px 2px 8px var(--box-shadow-dark), -4px -2px 8px var(--box-shadow-light);
     color: var(--button-color);
     text-align: center;
@@ -46,6 +46,13 @@
 .answer label:hover {
     box-shadow: 8px 4px 8px var(--box-shadow-dark), -4px -2px 8px var(--box-shadow-light);
     transition: 250ms;
+}
+
+.answer-scale {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    margin-bottom: 48px;
 }
 
 .result {
@@ -97,6 +104,7 @@ h3 {
 
 input[type="radio"]:checked+label {
     background-color: var(--accent-color);
+    border: 2px solid var(--accent-color);
     color: var(--secondary-text-color);
 }
 
@@ -125,15 +133,14 @@ p {
 @media only screen and (max-width: 1080px) {
     
     .answers {
-        flex-direction: column;
+        /* flex-direction: column; */
     }
     
     .answer label {
-        border-radius: 25px;
-        font-size: 45px;
+        border-radius: 50%;
+        font-size: 25px;
         margin: 20px;
         padding: 30px;
-        width: 90%;
     }
 
     .results {
@@ -169,7 +176,7 @@ p {
     h1 {
         border-radius: 25px;
         box-shadow: 6px 3px 12px var(--box-shadow-dark), -6px -3px 12px var(--box-shadow-light);
-        font-size: 72px;
+        font-size: 48px;
         padding: 8px 20px;
         margin: 20px;
     }
@@ -177,7 +184,7 @@ p {
     h3 {
         border-radius: 25px;
         box-shadow: 6px 3px 12px var(--box-shadow-dark), -6px -3px 12px var(--box-shadow-light);
-        font-size: 64px;
+        font-size: 32px;
         padding: 20px;
     }
     
@@ -201,11 +208,11 @@ p {
     }
     
     .answer label {
-        border-radius: 10px;
-        font-size: 20px;
+        border-radius: 50%;
+        height: 48px;
         margin: 8px;
         padding: 12px;
-        width: 100%
+        width: 48px;
     }
 
     .result {

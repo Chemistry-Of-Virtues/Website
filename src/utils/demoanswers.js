@@ -1,4 +1,5 @@
 const traits = require('./traits')
+console.log(traits['Intelectual Virtue'])
 
 const getResults = (questions) => {
     let answered = true

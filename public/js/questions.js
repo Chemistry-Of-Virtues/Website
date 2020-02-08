@@ -26,10 +26,14 @@ const displayQuestion = (question, index) => {
     const $questionForm = document.createElement('form')
     const $questionText = document.createElement('h3')
     const $answers = document.createElement('div')
+    const $answerScale = document.createElement('div')
+    const $answerScaleLabelPositive = document.createElement('p')
+    const $answerScaleLabelNegative = document.createElement('p')
 
     $questionText.innerHTML = question.question
     $questionForm.appendChild($questionText)
     $answers.className = 'answers'
+    $answerScale.className = 'answer-scale'
 
     for (let i = 1; i < 6; i++) {
         const $answer = document.createElement('div')
@@ -44,19 +48,19 @@ const displayQuestion = (question, index) => {
         $answerTitle.htmlFor = `${index}${i}`
         switch (i) {
             case 1:
-                $answerTitle.innerHTML = "Strongly Disagree"
+                $answerTitle.innerHTML = ""
                 break;
             case 2:
-                $answerTitle.innerHTML = "Somewhat Disagree"
+                $answerTitle.innerHTML = ""
                 break;
             case 3:
-                $answerTitle.innerHTML = "Neutral"
+                $answerTitle.innerHTML = ""
                 break;
             case 4:
-                $answerTitle.innerHTML = "Somewhat Agree"
+                $answerTitle.innerHTML = ""
                 break;
             case 5:
-                $answerTitle.innerHTML = "Strongly Agree"
+                $answerTitle.innerHTML = ""
                 break;
         }
         $answer.className = 'answer'
@@ -64,8 +68,14 @@ const displayQuestion = (question, index) => {
         $answer.appendChild($answerTitle)
         $answers.appendChild($answer)
     }
+    $answerScaleLabelNegative.innerHTML = 'Strongly Disagree'
+    $answerScaleLabelPositive.innerHTML = 'Strongly Agree'
+
+    $answerScale.appendChild($answerScaleLabelNegative)
+    $answerScale.appendChild($answerScaleLabelPositive)
     $questionForm.id = `question-form-${index}`
     $questionForm.appendChild($answers)
+    $questionForm.appendChild($answerScale)
     $questionsSection.appendChild($questionForm)
 
 }
