@@ -17,7 +17,11 @@ const getResults = (questions) => {
     questions.forEach((question) => {
         question.attributes.forEach((attribute) => {
             if (traits[attribute.name]) {
-                traits[attribute.name].value += parseInt(question.answer)
+                if (attribute.reversed) {
+                    traits[attribute.name].value -= parseInt(question.answer)
+                } else {
+                    traits[attribute.name].value += parseInt(question.answer)
+                }
             } else {
                 console.log(`${attribute.name} does not exist.`)
             }

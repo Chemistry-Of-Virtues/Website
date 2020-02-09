@@ -100,8 +100,8 @@ const displayResults = (results) => {
         $resultScale.className = 'result-scale'
         $result.className = 'result'
 
-        $resultScale.appendChild($resultPositive)
         $resultScale.appendChild($resultNegative)
+        $resultScale.appendChild($resultPositive)
 
         $result.appendChild($resultTitle)
         $result.appendChild($resultText)

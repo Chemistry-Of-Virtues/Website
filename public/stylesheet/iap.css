@@ -137,10 +137,6 @@ p {
 
 @media only screen and (max-width: 1080px) {
     
-    .answers {
-        /* flex-direction: column; */
-    }
-    
     .answer label {
         border-radius: 50%;
         font-size: 25px;
@@ -168,7 +164,6 @@ p {
     .result-scale p {
         font-size: 45px;
         margin: 24px 0 48px 0;
-        /* word-break: break-all; */
     }
 
     .result-title {

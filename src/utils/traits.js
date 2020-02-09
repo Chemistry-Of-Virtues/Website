@@ -57,7 +57,7 @@ const traits = {
     'Abusive': {
         'category': 'Issues and Behaviors',
         'positive': 'Awareness, Professional Help, Finding Purpose',
-        'negative': 'Emotional and/or Physical',
+        'negative': 'Emotional and, or Physical',
         'value': 0
     },
     'Addiction': {
@@ -116,13 +116,13 @@ const traits = {
     },
     'Under Authority': {
         'category': 'Wounds',
-        'positive': 'Resilience Through Authenticity/Vulnerability',
+        'positive': 'Resilience Through Authenticity, Vulnerability',
         'negative': 'Trust, Boundary & Self Image Issues, Confrontational',
         'value': 0
     },
     'Non-controlable Circumstances': {
         'category': 'Wounds',
-        'positive': 'Self Compassion/Adaptive',
+        'positive': 'Self Compassion, Adaptive',
         'negative': 'Hostile, Bitter, Contentious, Self Harming, Withdrawn, Worrying',
         'value': 0
     },
