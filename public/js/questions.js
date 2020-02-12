@@ -89,6 +89,13 @@ const displayResults = (results) => {
         const $resultNegative = document.createElement('p')
         const $resultText = document.createElement('p')
         const $results = document.getElementById('results')
+        const $descriptiveParagraph = document.createElement('p')
+
+        if (results[category].value > 0) {
+            $descriptiveParagraph.innerHTML = results[category].positiveParagraph
+        } else if (results[category].value < 0) {
+            $descriptiveParagraph.innerHTML = results[category].negativeParagraph
+        }
 
         $resultTitle.innerHTML = category
         $resultPositive.innerHTML = results[category].positive
@@ -106,6 +113,7 @@ const displayResults = (results) => {
         $result.appendChild($resultTitle)
         $result.appendChild($resultText)
         $result.appendChild($resultScale)
+        $result.appendChild($descriptiveParagraph)
 
         $results.appendChild($result)
     }
