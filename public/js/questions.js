@@ -157,12 +157,12 @@ const getQuestions = async () => {
     })
 
     $submitQuestions.addEventListener('click', async () => {
-        if (submitQuestions(questions)) {  
+        if (submitQuestions(questions)) {
+            await postQuestions(submitQuestions(questions))  
             window.scrollTo({
                 top: 0,
                 behavior: "smooth"
             })
-            await postQuestions(submitQuestions(questions))
             document.getElementById('questions').parentNode.removeChild(document.getElementById('questions'))
             document.getElementById('submit-questions').parentNode.removeChild(document.getElementById('submit-questions')) 
             displayResults(results) 
