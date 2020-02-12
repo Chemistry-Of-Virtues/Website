@@ -102,6 +102,7 @@ const displayResults = (results) => {
         $resultNegative.innerHTML = results[category].negative
         $resultText.innerHTML = results[category].value
 
+        $descriptiveParagraph.className = 'result-description'
         $resultTitle.className = 'result-title'
         $resultText.className = 'result-text'
         $resultScale.className = 'result-scale'

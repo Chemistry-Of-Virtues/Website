@@ -61,6 +61,10 @@
     align-items: center;
 }
 
+.result-description {
+    padding: 10%;
+}
+
 .result-scale {
     display: flex;
     justify-content: space-between;
@@ -159,6 +163,10 @@ p {
         border-radius: 25px;
         box-shadow: 6px 3px 12px var(--box-shadow-dark), -6px -3px 12px var(--box-shadow-light);
         margin: 72px 0;
+    }
+
+    .result-description {
+        font-size: 36px;
     }
 
     .result-scale p {
