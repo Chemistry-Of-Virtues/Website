@@ -92,9 +92,13 @@ const displayResults = (results) => {
         const $descriptiveParagraph = document.createElement('p')
 
         if (results[category].value > 0) {
-            $descriptiveParagraph.innerHTML = results[category].positiveParagraph
+            if (results[category].positiveParagraph) {
+                $descriptiveParagraph.innerHTML = results[category].positiveParagraph
+            }
         } else if (results[category].value < 0) {
-            $descriptiveParagraph.innerHTML = results[category].negativeParagraph
+            if (results[category].negativeParagraph) {
+                $descriptiveParagraph.innerHTML = results[category].negativeParagraph
+            }
         }
 
         $resultTitle.innerHTML = category
