@@ -118,7 +118,9 @@ const displayResults = (results) => {
         $result.appendChild($resultTitle)
         $result.appendChild($resultText)
         $result.appendChild($resultScale)
-        $result.appendChild($descriptiveParagraph)
+        if (result[category].positiveParagraph) {
+            $result.appendChild($descriptiveParagraph)
+        }
 
         $results.appendChild($result)
     }
