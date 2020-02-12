@@ -6,9 +6,9 @@ body {
 }
 
 .cover{
-    width: 360px;
-    height: 600px;
-    background: url(chem.jpg);
+    width: 1500px;
+    height: 900px;
+    background-color: darkblue;
     position: absolute;
     top: 50%;
     left: 50%;
