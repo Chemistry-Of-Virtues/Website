@@ -41,7 +41,18 @@ router.post('/admin/logout', authAdmin, async (req, res) => {
     }
 })
 
+router.post('/admin/logoutall', authAdmin, async (req, res) => {
+    try {
+        req.admin.tokens = []
+        await req.admin.save()
+        res.send()
+    } catch (e) {
+        res.status(500).send
+    }
+})
+
 router.get('/admin/clients', authAdmin, async (req, res) => {
+    console.log(req.admin)
     try {
         await req.admin.populate('clients').execPopulate()
         res.send(req.admin.clients)

@@ -1,12 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Administrator</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet/admin-landing-page.css">
 </head>
+
 <body>
-    <h1>You have logged in successfully!</h1>
+    <header>
+        <h1 id="greeting">Welcome</h1>
+        <section class="logout-buttons">
+            <button onclick="logout()">Logout</button>
+            <button onclick="logoutAll()">End All Sessions</button>
+        </section>
+    </header>
+    <section id="clients-overview">
+        <section class="title-bar">
+            <h2>Clients</h2>
+            <button class="add-client-button" onclick="addClients()">+</button>
+        </section>
+    </section>
+    <section class="create-client" id="create-client">
+        <form class="create-client-form">
+            <h2>Add a Client</h2>
+            <span onclick="closeClientForm()">X</span>
+            <input name="firstName" type="text" id="first-name" placeholder="First Name" required>
+            <input name="lastName" type="text" id="last-name" placeholder="Last Name" required>
+            <input name="userName" type="text" id="user-name" placeholder="Username" required>
+            <input name="email" type="text" id="email" placeholder="Email" required>
+            <input name="password" type="password" id="password" placeholder="Password" required>
+            <input name="passwordVerify" type="password" id="password-verify" placeholder="Verify Password" required>
+            <button>Add Client</button>
+        </form>
+    </section>
     <script src="/js/admin-landing-page.js"></script>
 </body>
+
 </html>

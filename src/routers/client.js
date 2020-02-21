@@ -21,6 +21,7 @@ router.post('/client', authAdmin, async (req, res) => {
 })
 
 router.post('/client/login', urlencodedParser, async (req, res) => {
+    console.log('Client Login Route Requested:', req.body)
     try {
         const client = await Client.findByCredentials(req.body.userName, req.body.password)
         const token = await client.generateAuthToken()

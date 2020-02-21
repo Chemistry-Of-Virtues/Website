@@ -1,0 +1,125 @@
+body {
+    background: #032539;
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    margin: 0 36px;
+    font-size: 36px;
+}
+
+header {
+    color: white;
+    display: flex;
+    padding: 0 36px;
+    justify-content: space-between;
+}
+
+#clients-overview {
+    color: white;
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 24px;
+}
+
+.add-client-button {
+    align-self: center;
+    background-color: rgb(44, 184, 9);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 50px;
+    height: 64px;
+    margin: 3px 36px 3px 0;
+    width: 64px;
+}
+
+.add-client-button:focus {
+    outline: none;
+}
+
+.add-client-button:hover {
+    cursor: pointer;
+    font-size: 56px;
+    height: 70px;
+    margin: 0 33px 0 0;
+    width: 70px;
+}
+
+.client-card {
+    background: white;
+    border-radius: 20px;
+    color: #333;
+    margin: 24px 0;
+    padding: 18px;
+}
+
+.create-client {
+    align-items: center;
+    background-color: #032539;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+}
+
+.create-client-form {
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    justify-content: space-around;
+    padding: 24px;
+    width: 400px;
+}
+
+.create-client-form > input {
+    border: 1px solid #333;
+    border-radius: 20px;
+    font-size: 16px;
+    margin: 20px;
+    padding: 4px 16px 4px 16px;
+    width: 80%;
+}
+
+.create-client-form > input:focus {
+    border: 2px solid green;
+}
+
+.logout-buttons {
+    align-items: center;
+    display: flex;
+}
+
+.logout-buttons > button {
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    height: 48px;
+    justify-self: center;
+    margin: 0 24px;
+    padding: 12px 20px;
+}
+
+.logout-buttons > button:focus {
+    outline: none;
+}
+
+.logout-buttons > button:hover {
+    background-color: rgb(44, 184, 9);
+    color: white;
+    cursor: pointer;
+}
+
+.title-bar {
+    display: flex;
+    justify-content: space-between;
+}
