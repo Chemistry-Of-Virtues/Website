@@ -24,11 +24,10 @@ router.post('/admin/login', urlencodedParser, async (req, res) => {
     try {
         const admin = await Admin.findByCredentials(req.body.userName, req.body.password)
         const token = await admin.generateAuthToken()
+        res.cookie('Authorization', token)
         res.send({ admin, token })
-        console.log('Authentication Successful', req.body)
     } catch (e) {
-        res.status(400).send('Login Failed')
-        console.log('Authentication Failed', req.body)
+        res.status(400).send(e)
     }
 })
 

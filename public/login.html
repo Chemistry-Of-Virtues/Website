@@ -42,10 +42,21 @@
     </nav>
     <div class="logins">
         <section class="login-forms">
-            <form id="admin-login" method="POST" action="/admin/login">
+            <!-- <form id="admin-login" method="POST" action="/admin/login"> -->
+            <form id="admin-login">
                 <h3>Administrator Login</h3>
-                <input name="userName" type="text" placeholder="Username" required>
-                <input name="password" type="password" placeholder="Password" required>
+                <input 
+                    id="admin-username"
+                    name="userName"
+                    type="text"
+                    placeholder="Username"
+                    required>
+                <input 
+                    id="admin-password"
+                    name="password" 
+                    type="password" 
+                    placeholder="Password" 
+                    required>
                 <button 
                     id="admin-submit-button" 
                     class="submit-button"
@@ -55,8 +66,18 @@
             </form>
             <form id="client-login" method="POST" action="/client/login">
                 <h3>Client Login</h3>
-                <input name="userName" type="text" placeholder="Username" required>
-                <input name="password" type="password" placeholder="Password" required>
+                <input 
+                    id="client-username"
+                    name="userName" 
+                    type="text" 
+                    placeholder="Username" 
+                    required>
+                <input 
+                    id="client-password"
+                    name="password" 
+                    type="password"
+                    placeholder="Password" 
+                    required>
                 <button 
                     id="client-submit-button" 
                     class="submit-button">
