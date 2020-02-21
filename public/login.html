@@ -41,8 +41,11 @@
         </div>
     </nav>
     <div class="logins">
+        <div class="account-type-selector">
+            <span id="admin-form-active-button" class="inactive-account-type">Admin</span>
+            <span id="client-form-active-button" class="active-account-type">Client</span>
+        </div>
         <section class="login-forms">
-            <!-- <form id="admin-login" method="POST" action="/admin/login"> -->
             <form id="admin-login">
                 <h3>Administrator Login</h3>
                 <input 
@@ -64,7 +67,7 @@
                     Login
                 </button>
             </form>
-            <form id="client-login" method="POST" action="/client/login">
+            <form id="client-login">
                 <h3>Client Login</h3>
                 <input 
                     id="client-username"
@@ -80,7 +83,8 @@
                     required>
                 <button 
                     id="client-submit-button" 
-                    class="submit-button">
+                    class="submit-button"
+                    type="submit">
                     Login
                 </button>
             </form>

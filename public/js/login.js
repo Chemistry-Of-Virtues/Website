@@ -1,5 +1,7 @@
 const adminLoginForm = document.getElementById('admin-login')
 const clientLoginForm = document.getElementById('client-login')
+const adminFormActiveButton = document.getElementById('admin-form-active-button')
+const clientFormActiveButton = document.getElementById('client-form-active-button')
 const adminValidationURL = '/admin/login'
 const clientValidationURL = '/client/login'
 const adminLandingPageURL = '/public/admin-landing-page.html'
@@ -44,4 +46,22 @@ adminLoginForm.addEventListener('submit', async (e) => {
         console.log('Failed!', e)
         return
     })
+})
+
+adminFormActiveButton.addEventListener('click', () => {
+    adminFormActiveButton.classList.remove('inactive-account-type')
+    clientFormActiveButton.classList.add('inactive-account-type')
+    clientFormActiveButton.classList.remove('active-account-type')
+    adminFormActiveButton.classList.add('active-account-type')  
+    adminLoginForm.style.display = 'flex';
+    clientLoginForm.style.display = 'none';
+})
+
+clientFormActiveButton.addEventListener('click', () => {
+    clientFormActiveButton.classList.remove('inactive-account-type')
+    adminFormActiveButton.classList.add('inactive-account-type')  
+    adminFormActiveButton.classList.remove('active-account-type')
+    clientFormActiveButton.classList.add('active-account-type') 
+    clientLoginForm.style.display = 'flex';
+    adminLoginForm.style.display = 'none';
 })
