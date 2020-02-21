@@ -1,7 +1,10 @@
 const express = require('express')
+const bodyParser = require('body-parser')
 const Client = require('../models/client')
 const { authClient, authAdmin } = require('../middleware/auth')
 const router = new express.Router()
+
+const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 router.post('/client', authAdmin, async (req, res) => {
     const client = new Client({
@@ -17,7 +20,7 @@ router.post('/client', authAdmin, async (req, res) => {
     }
 })
 
-router.post('/client/login', async (req, res) => {
+router.post('/client/login', urlencodedParser, async (req, res) => {
     try {
         const client = await Client.findByCredentials(req.body.userName, req.body.password)
         const token = await client.generateAuthToken()

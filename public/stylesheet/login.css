@@ -1,81 +1,81 @@
 body {
-    background-color: #333;
-    margin: 0;
-    padding: 0;
+    background-color: #032539;
     font-family: "Montserrat", sans-serif;
+    height: 90vh;
 }
 
-.cover{
-    width: 1500px;
-    height: 900px;
-    background-color: darkblue;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
-}
-
-.cover h1 {
-    font-size: 40px;
-    margin-top: 125px;
-    margin-bottom: 60px;
-}
-
-.box1 {
-    width: 260px;
-    height: 40px;
-    background: #f1f1f3;
-    border-radius: 10px;
-    margin: 20px auto;
-}
-
-.box1 input {
-    font-size: 14px;
-    font-size: "Montserrat", sans-serif;
-    background: none;
+button {
+    background-color: #032539;
     border: none;
-    outline: none;
-    text-align: center;
+    border-radius: 20px;
+    color: white;
+    margin: 18px;
+    padding: 8px;
+    transition: 150ms;
     width: 90%;
-    line-height: 37px;
-    color: #333;
 }
 
-.btn {
-    width: 260px;
-    height: 40px;
-    background: #f1f1f1b3;
-    border-radius: 10px;
-    margin: 14px auto;
-    font-family: "Montserrat", sans-serif;
-    font-size: 16px;
-    border: none;
-    color: white;
+button:hover {
+    background-color: green;
     cursor: pointer;
+    transition: 150ms;
 }
-.b1 {
-    display: block;
-    width: 260px;
-    padding: 10px 0;
-    text-align: center;
-    margin: auto;
-    transition: 0.4s all;
-}
-.b2 {
-    position: absolute;
-    width: 260px;
-    padding: 10px 0;
-    bottom: 80px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-decoration: none;
-    text-align: center;
-    transition: 0.4s all;
-    color: #3498db;
-}
-a:hover {
-    background: #3f282840;
 
+button:focus {
+    outline: none;
+}
+
+h3 {
+    color: #333;
+    padding: 12px;
+    text-align: center;
+}
+
+input {
+    border-radius: 20px;
+    border: 1px solid #333;
+    margin: 20px;
+    padding: 4px 16px 4px 16px;
+    width: 90%;
+}
+
+input:focus {
+    border: 2px solid green;
+    outline: none;
+}
+
+nav {
+    background: white;
+}
+
+.login-forms {
+    display: flex;
+}
+
+.logins {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+}
+
+#admin-login,
+#client-login {
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    justify-content: space-evenly;
+    padding: 12px;
+    width: 275px;
+}
+
+#admin-login {
+}
+
+#client-login {
+    display: none;
 }

@@ -4,24 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./stylesheet/bootstrap.css">
+    <link rel="stylesheet" href="./stylesheet/style.css">
     <link rel="stylesheet" href="stylesheet/login.css">
     <title>Document</title>
 </head>
 <body>
-    <div class = "cover">
-        <h1>LOG IN</h1>
-        <form action="login.html" method = "post">
-            <div class = "box1">
-                <input type="text" value="" placeholder = "@username">
-            </div>
-            <div class = "box1">
-                <input type="password" placeholder="password" value="">
-            </div>
-            <input class = "btn" type="submit" name="" value="LOG IN">
-        </form>
-        <a href="#" class = "b1">FORGET PASSWORD ?</a>
-        <a href="#" class = "b2">CREATE AN ACCOUNT</a>
+    <nav class="navbar navbar-expand-lg navbar-light text-light">
+        <a class="navbar-brand text-dark" href="#">Chemistry of Virtues</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link text-muted" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-muted" href="about.html">About Us</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-muted" href="contact.html">Contact Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-muted" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Me
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item text-muted" href="user.html">User Profile</a>
+                        <a class="dropdown-item text-muted" href="login.html">Login</a>
+                        <a class="dropdown-item text-muted" href="registeration.html">Register</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="logins">
+        <section class="login-forms">
+            <form id="admin-login" method="POST" action="/admin/login">
+                <h3>Administrator Login</h3>
+                <input name="userName" type="text" placeholder="Username" required>
+                <input name="password" type="password" placeholder="Password" required>
+                <button 
+                    id="admin-submit-button" 
+                    class="submit-button"
+                    type="submit">
+                    Login
+                </button>
+            </form>
+            <form id="client-login" method="POST" action="/client/login">
+                <h3>Client Login</h3>
+                <input name="userName" type="text" placeholder="Username" required>
+                <input name="password" type="password" placeholder="Password" required>
+                <button 
+                    id="client-submit-button" 
+                    class="submit-button">
+                    Login
+                </button>
+            </form>
+        </section>
     </div>
-    
+    <script src="js/login.js"></script>
 </body>
 </html>

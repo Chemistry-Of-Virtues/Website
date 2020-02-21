@@ -1,8 +1,11 @@
-const express = require('express');
+const express = require('express')
+const bodyParser = require('body-parser')
 const Admin = require('../models/admin')
 const Client = require('../models/client')
 const { authAdmin } = require('../middleware/auth')
 const router = new express.Router();
+
+const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 router.post('/admin', async (req, res) => {
     const admin = new Admin(req.body)
@@ -16,13 +19,16 @@ router.post('/admin', async (req, res) => {
     }
 })
 
-router.post('/admin/login', async (req, res) => {
+router.post('/admin/login', urlencodedParser, async (req, res) => {
+    console.log('Admin Login Route Requested')
     try {
         const admin = await Admin.findByCredentials(req.body.userName, req.body.password)
         const token = await admin.generateAuthToken()
         res.send({ admin, token })
+        console.log('Authentication Successful', req.body)
     } catch (e) {
-        res.status(400).send(e)
+        res.status(400).send('Login Failed')
+        console.log('Authentication Failed', req.body)
     }
 })
 
