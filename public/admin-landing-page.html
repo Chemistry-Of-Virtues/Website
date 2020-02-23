@@ -20,26 +20,27 @@
     <main>
         <section class="action-sidebar">
         </section>
-        <section id="clients-overview">
+        <section>
             <section class="title-bar">
                 <h2>Clients</h2>
-                <button class="add-client-button" onclick="addClients()">Add a Client</button>
+                <button class="add-client-button" onclick="showAddClientForm()">Add a Client</button>
             </section>
+            <section id="clients-overview"></section>
         </section>
     </main>
     <section class="create-client" id="create-client">
-        <form class="create-client-form" autocomplete="nope">
+        <form id="create-client-form" class="create-client-form" autocomplete="nope">
             <div class="create-client-form-header">
                 <h2>Add a Client</h2>
-                <button onclick="closeClientForm()">×</button>
+                <button onclick="closeAddClientForm()">×</button>
             </div>
             <input name="firstName" type="text" id="first-name" placeholder="First Name" required>
             <input name="lastName" type="text" id="last-name" placeholder="Last Name" required>
             <input name="userName" type="text" id="user-name" placeholder="Username" required>
             <input name="email" type="text" id="email" placeholder="Email" required>
             <input name="password" type="password" id="password" placeholder="Password" required>
-            <input name="passwordVerify" type="password" id="password-verify" placeholder="Verify Password" required>
-            <button>Add Client</button>
+            <input name="passwordVerify" type="password" id="verify-password" placeholder="Verify Password" required>
+            <button type="submit">Add Client</button>
         </form>
     </section>
     <script src="/js/admin-landing-page.js"></script>

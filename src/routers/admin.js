@@ -20,7 +20,6 @@ router.post('/admin', async (req, res) => {
 })
 
 router.post('/admin/login', urlencodedParser, async (req, res) => {
-    console.log('Admin Login Route Requested')
     try {
         const admin = await Admin.findByCredentials(req.body.userName, req.body.password)
         const token = await admin.generateAuthToken()
@@ -52,7 +51,6 @@ router.post('/admin/logoutall', authAdmin, async (req, res) => {
 })
 
 router.get('/admin/clients', authAdmin, async (req, res) => {
-    console.log(req.admin)
     try {
         await req.admin.populate('clients').execPopulate()
         res.send(req.admin.clients)

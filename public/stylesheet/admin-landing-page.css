@@ -53,6 +53,8 @@ main {
 
 .client-card {
     border: 2px solid lightgrey;
+    display: flex;
+    justify-content: space-between;
     margin: 25px;
     min-width: 500px;
     padding: 0 25px;
@@ -79,6 +81,24 @@ main {
     outline: none;
 }
 
+.remove-client {
+    background-color: white;
+    border: none;
+    color: red;
+    font-size: 30px;
+    height: 32px;
+    margin: auto 0;
+    width: 32px;
+}
+
+.remove-client:hover {
+    cursor: pointer;
+}
+
+.remove-client:focus {
+    outline: none;
+}
+
 .title-bar {
     border-bottom: 2px solid lightgrey;
     display: flex;
@@ -90,7 +110,7 @@ main {
 
 .create-client {
     align-items: center;
-    background-color: #03253969;
+    background-color: rgba(0, 0, 0, 0.753);
     display: none;
     height: 100%;
     justify-content: center;

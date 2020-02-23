@@ -6,7 +6,7 @@ const router = new express.Router()
 
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-router.post('/client', authAdmin, async (req, res) => {
+router.post('/client', urlencodedParser, authAdmin, async (req, res) => {
     const client = new Client({
         ...req.body,
         adminId: req.admin._id
@@ -21,7 +21,6 @@ router.post('/client', authAdmin, async (req, res) => {
 })
 
 router.post('/client/login', urlencodedParser, async (req, res) => {
-    console.log('Client Login Route Requested:', req.body)
     try {
         const client = await Client.findByCredentials(req.body.userName, req.body.password)
         const token = await client.generateAuthToken()
@@ -37,6 +36,18 @@ router.post('/client/logout', authClient, async (req, res) => {
         await req.client.save()
         res.send()
     } catch (e) {
+        res.status(500).send()
+    }
+})
+
+router.delete('/client', urlencodedParser, authAdmin, async (req, res) => {
+    console.log('Client Delete Route Requested:', req.body)
+    try {
+        await Client.deleteOne({ userName: req.body.userName })
+        console.log('Deleted!')
+        res.send()
+    } catch (e) {
+        console.log('Delete failed with error:', e)
         res.status(500).send()
     }
 })
