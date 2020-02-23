@@ -41,13 +41,10 @@ router.post('/client/logout', authClient, async (req, res) => {
 })
 
 router.delete('/client', urlencodedParser, authAdmin, async (req, res) => {
-    console.log('Client Delete Route Requested:', req.body)
     try {
         await Client.deleteOne({ userName: req.body.userName })
-        console.log('Deleted!')
         res.send()
     } catch (e) {
-        console.log('Delete failed with error:', e)
         res.status(500).send()
     }
 })

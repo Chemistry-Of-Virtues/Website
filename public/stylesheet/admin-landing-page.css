@@ -66,6 +66,7 @@ main {
 }
 
 .logout-buttons > button {
+    background-color: white;
     border: none;
     border-radius: 20px;
     font-size: 16px;

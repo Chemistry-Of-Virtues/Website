@@ -24,7 +24,7 @@ router.post('/admin/login', urlencodedParser, async (req, res) => {
         const admin = await Admin.findByCredentials(req.body.userName, req.body.password)
         const token = await admin.generateAuthToken()
         res.cookie('Authorization', token)
-        res.send({ admin, token })
+        res.send()
     } catch (e) {
         res.status(400).send(e)
     }
