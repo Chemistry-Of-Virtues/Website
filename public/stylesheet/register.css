@@ -1,0 +1,55 @@
+body {
+    background-color: #032539;
+    font-family: "Montserrat", sans-serif;
+    height: 90vh;
+}
+.content{
+    display:grid;
+    grid-template-columns: auto 400px auto;
+    border-radius: 20px;
+    font-family: "Montserrat", sans-serif;
+}
+
+h1{
+    color: #333;
+    text-align:center;
+}
+.registration-form {
+    background-color: white;
+    grid-template-columns: auto 400px auto;
+    border-radius: 20px;
+    grid-column: 2/3;
+    margin-top: 15%;
+    text-align: center;
+}
+input, submit{
+    border-radius: 20px;
+    border: 1px solid #333;
+    margin:10px 20px;
+    padding:8px;
+    width: 300px;
+    
+}
+#submit {
+    background-color: #032539;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    margin: 10px 20px;
+    padding: 12px 8px;
+    margin-bottom:20px; 
+    transition: 150ms;
+    width: 322px;
+    
+    
+}
+#submit:hover {
+    background-color: green;
+    cursor: pointer;
+    transition: 150ms;
+}
+button:focus {
+    outline: none;
+}
+
+
