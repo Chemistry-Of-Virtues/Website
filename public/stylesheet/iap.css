@@ -144,9 +144,17 @@ p {
 
     /* Result Styles */
 
+    .descriptions {
+        width: 100vw;
+    }
+
     .scale > p,
     .descriptions {
         font-size: 2em;
+    }
+
+    .toggle-descriptions {
+        width: 100vw;
     }
 
 
@@ -190,6 +198,11 @@ p {
         padding: 12px;
         width: 750px;
     }
+
+    /* Results Styles */
+    .descriptions {    
+        width: 600px;
+    }
 }
 
 /* Results Styles */
@@ -203,18 +216,16 @@ p {
     align-items: flex-end;
     background-image: url("../media/graph1.png");
     display: flex;
-    justify-content: space-between;
     height: 400px;
+    justify-content: space-between;
+    margin: auto;
+    width: 600px;
 }
 
 .descriptions {
     border: 2px solid var(--primary-color);
     display: none;
     margin-bottom: 24px;
-}
-
-.graph {
-    width: 600px;
 }
 
 .negative-bar {
@@ -234,6 +245,8 @@ p {
 .scale {
     display: flex;
     justify-content: space-evenly;
+    margin: auto;
+    width: 600px;
 }
 
 .scale > p {
