@@ -229,15 +229,13 @@ p {
 }
 
 .negative-bar {
-    background-color: var(--primary-color);;
-    height: 63%;
+    background-color: var(--primary-color);
     margin: 0 0 68px 165px;
     padding: 0 20px;
 }
 
 .positive-bar {
-    background-color: var(--primary-color);;
-    height: 31.5%;
+    background-color: var(--primary-color);
     margin: 0 162px 68px 0;
     padding: 0 20px;
 }

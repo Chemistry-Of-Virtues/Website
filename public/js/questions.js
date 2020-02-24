@@ -121,7 +121,7 @@ let i = 0
             const cssPercentageModifier = 0.63
             const totalPossible = results[category].totalPossible
             const percentagePositive = ((results[category].value + totalPossible) / (totalPossible * 2)) * 100
-            const percentageNegative = 100 - percentagePositive
+            const percentageNegative = ((-results[category].value + totalPossible) / (totalPossible * 2)) * 100
 
             positiveBar.style.height = `${percentagePositive * cssPercentageModifier}%`
             negativeBar.style.height = `${percentageNegative * cssPercentageModifier}%`
