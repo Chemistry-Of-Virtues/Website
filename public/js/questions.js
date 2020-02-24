@@ -39,7 +39,7 @@ const displayQuestion = (question, index) => {
         const $answer = document.createElement('div')
         const $answerField = document.createElement('input')
         const $answerTitle = document.createElement('label')
-            
+
         $answerField.type = 'radio'
         $answerField.name = question.question
 
@@ -81,49 +81,116 @@ const displayQuestion = (question, index) => {
 }
 
 const displayResults = (results) => {
+let i = 0
+
     for (const category in results) {
-        const $result = document.createElement('div')
-        const $resultTitle = document.createElement('h3')
-        const $resultScale = document.createElement('div')
-        const $resultPositive = document.createElement('p')
-        const $resultNegative = document.createElement('p')
-        const $resultText = document.createElement('p')
-        const $results = document.getElementById('results')
-        const $descriptiveParagraph = document.createElement('p')
+        if (i < 9) {
+            const graph = document.createElement('div')
+            const bars = document.createElement('div')
+            const title = document.createElement('h3')
+            const negativeBar = document.createElement('div')
+            const positiveBar = document.createElement('div')
+            const scale = document.createElement('div')
+            const negativeScale = document.createElement('p')
+            const positiveScale = document.createElement('p')
+            const toggleDescriptions = document.createElement('div')
+            const toggleDescriptionsText = document.createElement('h4')
+            const descriptions = document.createElement('div')
+            const negativeDescription = document.createElement('p')
+            const positiveDescription = document.createElement('p')
 
-        if (results[category].value > 0) {
-            if (results[category].positiveParagraph) {
-                $descriptiveParagraph.innerHTML = results[category].positiveParagraph
-            }
-        } else if (results[category].value < 0) {
-            if (results[category].negativeParagraph) {
-                $descriptiveParagraph.innerHTML = results[category].negativeParagraph
-            }
+            negativeScale.innerHTML = results[category].negative
+            positiveScale.innerHTML = results[category].positive
+            negativeDescription.innerHTML = results[category].negative + ': ' + results[category].negativeParagraph
+            positiveDescription.innerHTML = results[category].positive + ': ' + results[category].positiveParagraph
+            toggleDescriptionsText.innerHTML = 'Show More'
+            title.innerHTML = category
+
+            graph.className = 'graph'
+            bars.className = 'bars'
+            negativeBar.className = 'negative-bar'
+            positiveBar.className = 'positive-bar'
+            scale.className = 'scale'
+            toggleDescriptions.className = 'toggle-descriptions'
+            toggleDescriptionsText.className = 'toggle-descriptions-text'
+            descriptions.className = 'descriptions'
+            negativeDescription.className = 'negative-description'
+            positiveDescription.className = 'positive-description'
+
+            // Graph bar sizing
+            const cssPercentageModifier = 0.63
+            const totalPossible = results[category].totalPossible
+            const percentagePositive = ((results[category].value + totalPossible) / (totalPossible * 2)) * 100
+            const percentageNegative = 100 - percentagePositive
+
+            positiveBar.style.height = `${percentagePositive * cssPercentageModifier}%`
+            negativeBar.style.height = `${percentageNegative * cssPercentageModifier}%`
+
+            $('#results').append(graph)
+            graph.append(title, bars, scale, toggleDescriptions, descriptions)
+            descriptions.append(negativeDescription, positiveDescription)
+            scale.append(negativeScale, positiveScale)
+            bars.append(negativeBar, positiveBar)
+            toggleDescriptions.append(toggleDescriptionsText)
+        } else {
+
         }
-
-        $resultTitle.innerHTML = category
-        $resultPositive.innerHTML = results[category].positive
-        $resultNegative.innerHTML = results[category].negative
-        $resultText.innerHTML = results[category].value
-
-        $descriptiveParagraph.className = 'result-description'
-        $resultTitle.className = 'result-title'
-        $resultText.className = 'result-text'
-        $resultScale.className = 'result-scale'
-        $result.className = 'result'
-
-        $resultScale.appendChild($resultNegative)
-        $resultScale.appendChild($resultPositive)
-
-        $result.appendChild($resultTitle)
-        $result.appendChild($resultText)
-        $result.appendChild($resultScale)
-        if (results[category].positiveParagraph) {
-            $result.appendChild($descriptiveParagraph)
-        }
-
-        $results.appendChild($result)
+        i++
     }
+
+
+    // category
+    // positive
+    // negative
+    // positiveParagraph
+    // negativeParagraph
+    // value
+    // totalPossible 
+
+
+    // for (const category in results) {
+    //     const $result = document.createElement('div')
+    //     const $resultTitle = document.createElement('h3')
+    //     const $resultScale = document.createElement('div')
+    //     const $resultPositive = document.createElement('p')
+    //     const $resultNegative = document.createElement('p')
+    //     const $resultText = document.createElement('p')
+    //     const $results = document.getElementById('results')
+    //     const $descriptiveParagraph = document.createElement('p')
+
+    //     if (results[category].value > 0) {
+    //         if (results[category].positiveParagraph) {
+    //             $descriptiveParagraph.innerHTML = results[category].positiveParagraph
+    //         }
+    //     } else if (results[category].value < 0) {
+    //         if (results[category].negativeParagraph) {
+    //             $descriptiveParagraph.innerHTML = results[category].negativeParagraph
+    //         }
+    //     }
+
+    //     $resultTitle.innerHTML = category
+    //     $resultPositive.innerHTML = results[category].positive
+    //     $resultNegative.innerHTML = results[category].negative
+    //     $resultText.innerHTML = results[category].value
+
+    //     $descriptiveParagraph.className = 'result-description'
+    //     $resultTitle.className = 'result-title'
+    //     $resultText.className = 'result-text'
+    //     $resultScale.className = 'result-scale'
+    //     $result.className = 'result'
+
+    //     $resultScale.appendChild($resultNegative)
+    //     $resultScale.appendChild($resultPositive)
+
+    //     $result.appendChild($resultTitle)
+    //     $result.appendChild($resultText)
+    //     $result.appendChild($resultScale)
+    //     if (results[category].positiveParagraph) {
+    //         $result.appendChild($descriptiveParagraph)
+    //     }
+
+    //     $results.appendChild($result)
+    // }
 }
 
 const submitQuestions = (questions) => {
@@ -158,14 +225,18 @@ const getQuestions = async () => {
 
     $submitQuestions.addEventListener('click', async () => {
         if (submitQuestions(questions)) {
-            await postQuestions(submitQuestions(questions))  
+            await postQuestions(submitQuestions(questions))
             window.scrollTo({
                 top: 0,
                 behavior: "smooth"
             })
             document.getElementById('questions').parentNode.removeChild(document.getElementById('questions'))
-            document.getElementById('submit-questions').parentNode.removeChild(document.getElementById('submit-questions')) 
-            displayResults(results) 
+            document.getElementById('submit-questions').parentNode.removeChild(document.getElementById('submit-questions'))
+            displayResults(results)    
+            $('.toggle-descriptions').click(function () {
+                $(this).next().slideToggle(100)
+                $(this).children("h4").text($(this).children("h4").text() == 'Show More' ? 'Show Less' : 'Show More')
+            })
         } else {
             alert('Please answer all of the questions before submitting!')
         }
