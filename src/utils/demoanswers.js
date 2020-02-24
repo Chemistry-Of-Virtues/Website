@@ -3,6 +3,11 @@ const traits = require('./traits')
 const getResults = (questions) => {
     let answered = true
 
+    // Reset traits
+    for (trait in traits) {
+        traits[trait].value = 0
+    }
+
     questions.forEach((question) => {
         if (question.answer === "") {
             answered = false
