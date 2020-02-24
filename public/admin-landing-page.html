@@ -18,14 +18,15 @@
         </section>
     </header>
     <main>
-        <section class="action-sidebar">
+        <section class="clients-sidebar" id="clients-sidebar">
+            <button class="add-client-button" onclick="showAddClientForm()">Add a Client</button>
+            <section id="clients"></section>
         </section>
         <section>
-            <section class="title-bar">
-                <h2>Clients</h2>
-                <button class="add-client-button" onclick="showAddClientForm()">Add a Client</button>
+            <section class="title-bar" id="title-bar">
+                <h2 id="client-name-header">Select a client to view.</h2>
             </section>
-            <section id="clients-overview"></section>
+            <section id="client-overview"></section>
         </section>
     </main>
     <section class="create-client" id="create-client">

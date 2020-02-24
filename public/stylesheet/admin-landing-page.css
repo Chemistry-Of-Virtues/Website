@@ -24,23 +24,18 @@ header {
 main {
     display: grid;
     grid-template-columns: 275px 1fr;
-    height: 100%;
-}
-
-.action-sidebar {
-    border-right: 2px solid lightgrey;
-    height: 100%;
+    height: 90%;
 }
 
 .add-client-button {
     background-color: #0B0;
     border: none;
-    border-radius: 20px;
     color: white;
     font-size: 16px;
+    font-weight: bold;
     height: 40px;
-    margin: auto 0;
-    padding: 0 16px;
+    margin-top: 25px;
+    width: 250px;
 }
 
 .add-client-button:hover {
@@ -53,12 +48,27 @@ main {
 
 .client-card {
     border: 2px solid lightgrey;
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
-    margin: 25px;
-    min-width: 500px;
+    margin: 25px auto 0 auto;
+    min-width: 200px;
     padding: 0 25px;
     width: 50%;
+}
+
+.client-name {
+    margin: 0;
+    padding: 8px;
+}
+
+.clients-sidebar {
+    align-items: center;
+    border-right: 2px solid lightgrey;
+    display: flex;
+    flex-direction: column;
+    max-height: 85vh;
+    padding-bottom: 50px;
 }
 
 .logout-buttons {
@@ -84,12 +94,11 @@ main {
 
 .remove-client {
     background-color: white;
-    border: none;
+    border: 2px solid red;
     color: red;
-    font-size: 30px;
+    font-size: 18px;
     height: 32px;
     margin: auto 0;
-    width: 32px;
 }
 
 .remove-client:hover {
@@ -105,6 +114,10 @@ main {
     display: flex;
     justify-content: space-between;
     padding: 0 50px;
+}
+
+#clients {
+    overflow-y: scroll;
 }
 
 /* create client overlay */
@@ -135,7 +148,7 @@ main {
 .create-client-form-header {
     display: flex;
     justify-content: space-between;
-    width: 90%;
+    width: 90%; 
 }
 
 .create-client-form-header > button {
