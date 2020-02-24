@@ -145,7 +145,8 @@ p {
     /* Result Styles */
 
     .descriptions {
-        width: 100vw;
+        margin: 0 auto;
+        width: 90vw;
     }
 
     .scale > p,
@@ -154,7 +155,8 @@ p {
     }
 
     .toggle-descriptions {
-        width: 100vw;
+        margin: 0 auto;
+        width: 90vw;
     }
 
 
