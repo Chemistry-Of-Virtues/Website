@@ -141,6 +141,15 @@ p {
         -webkit-appearance: none;
         width: 90%;
     }
+
+    /* Result Styles */
+
+    .scale > p,
+    .descriptions {
+        font-size: 2em;
+    }
+
+
 }
 
 @media only screen and (min-width: 1081px) {
